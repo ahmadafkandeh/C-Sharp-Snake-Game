@@ -128,6 +128,7 @@ Loop:
                     if (snake[0].x < 0 || snake[0].y < 0 || snake[0].x >= maxXPos || snake[0].y >= maxYPos)
                         Die();
 
+                    //detect collision with body
                     for( int j=1;j<snake.Count;j++)
                     {
                         if (snake[0].x == snake[j].x && snake[0].y == snake[j].y)
@@ -165,6 +166,7 @@ Loop:
                     }
                     else
                         snakeColor = Brushes.Gray;
+
                     gra.FillEllipse(snakeColor,
                                        new Rectangle(snake[i].x * Settings.width,
                                                snake[i].y * Settings.height,
